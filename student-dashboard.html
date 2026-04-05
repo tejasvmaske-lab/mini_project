@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - LibCore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .main-dash {
+            flex: 1;
+            padding: 3rem;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .stat-item {
+            padding: 2rem;
+            border-radius: 1.5rem;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <div style="font-family: 'Outfit'; font-weight: 700; font-size: 1.75rem; color: var(--primary); margin-bottom: 2rem;">
+            <i class="fas fa-book-reader"></i> LibCore
+        </div>
+        
+        <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="home.html" class="nav-link"><i class="fas fa-search"></i> Library Catalog</a>
+            <a href="student-dashboard.html" class="nav-link active"><i class="fas fa-user-graduate"></i> My Shelf</a>
+            <a href="#" class="nav-link"><i class="fas fa-history"></i> History</a>
+        </nav>
+
+        <div style="margin-top: auto;">
+            <a href="index.html" class="nav-link" style="color: var(--error);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-dash">
+        <header style="margin-bottom: 3rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Student Dashboard</h1>
+            <p style="color: var(--text-muted);">Welcome back, John Doe. You have 2 books due this week.</p>
+        </header>
+
+        <div class="stat-grid">
+            <div class="stat-item glass">
+                <i class="fas fa-book-open" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 2.5rem;">03</h3>
+                <p style="color: var(--text-muted);">Books Borrowed</p>
+            </div>
+            <div class="stat-item glass">
+                <i class="fas fa-clock" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 2.5rem;">02</h3>
+                <p style="color: var(--text-muted);">Due Soon</p>
+            </div>
+            <div class="stat-item glass">
+                <i class="fas fa-history" style="font-size: 2rem; color: var(--success); margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 2.5rem;">15</h3>
+                <p style="color: var(--text-muted);">Books Returned</p>
+            </div>
+        </div>
+
+        <section class="glass" style="padding: 2rem; border-radius: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.5rem;">Currently Borrowed</h3>
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Renew All</button>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Borrowed Date</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <img src="https://images.unsplash.com/photo-1543005814-14b24e1f786d?w=40&h=60&fit=crop" style="border-radius: 0.25rem;">
+                                <div>
+                                    <p style="font-weight: 600;">The Great Gatsby</p>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted);">F. Scott Fitzgerald</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Oct 15, 2023</td>
+                        <td>Oct 29, 2023</td>
+                        <td><span class="badge badge-success">On Time</span></td>
+                        <td><button class="btn" style="padding: 0.5rem; font-size: 0.85rem; background: var(--bg-main); border: 1px solid var(--border);">Renew</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=40&h=60&fit=crop" style="border-radius: 0.25rem;">
+                                <div>
+                                    <p style="font-weight: 600;">To Kill a Mockingbird</p>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted);">Harper Lee</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Oct 10, 2023</td>
+                        <td>Oct 24, 2023</td>
+                        <td><span class="badge badge-warning" style="background: rgba(239, 68, 68, 0.1); color: var(--error);">Overdue</span></td>
+                        <td><button class="btn" style="padding: 0.5rem; font-size: 0.85rem; background: var(--bg-main); border: 1px solid var(--border);">Return Now</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
